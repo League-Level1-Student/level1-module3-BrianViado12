@@ -26,14 +26,17 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
  *   Right click your project and add it as a JAR (Under Java Build Path > Libraries).*/
 
 public class Jukebox implements Runnable, ActionListener {
-
+	JButton button1 = new JButton("Cyberninja");
+	JButton button2 = new JButton("Run Like A Rebel");
+	Song music1 = new Song("Jukebox.mp3");
+	Song music2 = new Song("Jukebox2.mp3");
     public void run() {
 
 		// 1. Find an mp3 on your computer or on the Internet.
 		// 2. Create a Song object for that mp3
-    	Song music = new Song("Jukebox.mp3");
+    	
 		// 3. Play the Song
-    	music.play();
+    	//music1.play();
 		/*
 		 * 4. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -41,16 +44,18 @@ public class Jukebox implements Runnable, ActionListener {
 		 * cover is clicked, stop the currently playing song, and play the one
 		 * that was selected.
 		 */
-    	JButton button = new JButton();
+    	
     	
     	JFrame frame = new JFrame();
     	frame.setVisible(true);
     	JPanel panel = new JPanel();
     	frame.add(panel);
     	
-    	panel.add(button);
+    	panel.add(button1);
+    	panel.add(button2);
     	frame.pack();
-    	button.addActionListener(this);
+    	button1.addActionListener(this);
+    	button2.addActionListener(this);
     }
     
     
@@ -65,7 +70,14 @@ public class Jukebox implements Runnable, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(button1==e.getSource()) {
+			music2.play();
+			music1.stop();
+		} 
+		else if(button2==e.getSource()) {
+			music1.play();
+			music2.stop();
+		}
 	}
 
 }

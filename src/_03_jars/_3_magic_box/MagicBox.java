@@ -48,6 +48,13 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 		} catch (Exception w) {
 			System.err.println(w.getMessage());
 		}
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		frame.addMouseListener(this);
+		frame.pack();
+		
 	}
 
 	private void createUI() {
