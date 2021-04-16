@@ -56,7 +56,8 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 		frame.pack();
 		
 	}
-
+	MediaPalace palace = new MediaPalace();
+	
 	private void createUI() {
 		JFrame frame = new JFrame("The Magic Box contains many secrets...");
 		frame.add(this);
