@@ -15,7 +15,8 @@ public class MovieClass {
 		queue.addMovie(movie4);
 		queue.addMovie(movie5);
 		queue.printMovies();
-		System.out.println("the best movie is ");
 		queue.sortMoviesByRating();
+		System.out.println("The best movie is " + queue.getBestMovie());
+		System.out.println("The second best movie is " + queue.getMovie(1));
 	}
 }
